@@ -41,8 +41,7 @@ const productService = {
     console.log(productId);
     console.log(updatedProduct);
 		const productIndex = products.findIndex((product) => product.id == productId);
-    
-    console.log('productindex '+ productIndex);
+
 		if (productIndex !== -1) {
       console.log('image' + updatedProduct.image);
       if(updatedProduct.image ===""){

@@ -24,6 +24,7 @@
                 </li>
                 <li>
                     <a href="#" class="desktop-item">Categorías</a>
+
                     <input type="checkbox" id="desplegable" />
                     <label for="desplegable" class="movil">Categorías</label>
                     <ul class="desplegable">
@@ -32,10 +33,16 @@
                         <li><a href="/vinilos">Vinilos</a></li>
                     </ul>
                 </li>
-                <li><a href="/carrito">Carrito</a></li>
-                <li><a href="/users/login">Iniciar sesión</a></li>
-                <li><a href="/users/register">Registrarse</a></li>
-                <li><a href="/product/create">Crear</a></li>
+                <% if(!locals.isLogged){ %>
+
+                    <li><a href="/users/login">Iniciar sesión</a></li>
+                    <li><a href="/users/register">Registrarse</a></li>
+                    <% } else {%>
+                        <li><a href="/carrito">Carrito</a></li>
+                        <li><a href="/product/create">Crear</a></li>
+                        <li><a href="/users/profile">Hola <%= locals.userLogged.name %></a></li>
+                        <li><a href="/users/logout">Cerrar Sesión</a></li>
+                        <% }%>
             </ul>
         </div>
     </nav>
